@@ -6,9 +6,10 @@ const router = express.Router()
 
 import { requireSignin, isAdmin } from "../middlewares/auth.js"
 
-import { create } from '../controllers/product.js'
+import { create , list} from '../controllers/product.js'
 
 router.post('/product', requireSignin, isAdmin, formidable(), create)
+router.get('products', list)
 
 
 export default router

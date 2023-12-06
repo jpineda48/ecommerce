@@ -45,7 +45,7 @@ export const create = async (req, res) => {
 
 export const list = async (req, res) => {
     try {
-        const products = await Product.find({})
+        const products = await Product.find({}).select('-photo').limit(12)
     } catch (error) {
         console.log(err)
     }
